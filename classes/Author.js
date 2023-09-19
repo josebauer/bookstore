@@ -1,4 +1,4 @@
-module.exports = class Author {
+export default class Author {
   constructor(name, nationality, bio) {
     this.name = name
     this.nationality = nationality

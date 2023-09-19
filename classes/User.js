@@ -1,4 +1,4 @@
-module.exports = class User {
+export default class User {
   constructor(name, email, password) {
     this.name = name
     this.email = email
