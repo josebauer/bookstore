@@ -1,4 +1,4 @@
-export default class Database {
+module.exports = class Database {
   #storage = {
     authors: [],
     books: [],

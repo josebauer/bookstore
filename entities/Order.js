@@ -1,4 +1,4 @@
-export default class Order {
+module.exports = class Order {
   #total
   #items 
   #user

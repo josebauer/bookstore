@@ -1,11 +1,11 @@
-import Database from "./database.js";
-import Author from "./entities/Author.js";
-import Book from "./entities/Book.js";
-import Order from "./entities/Order.js";
-import Poster from "./entities/Poster.js";
-import User from "./entities/User.js";
+const Database = require('./Database')
+const Book = require('./entities/Book')
+const Order = require('./entities/Order')
+const Poster = require('./entities/Poster')
+const User = require('./entities/User')
+const Author = require('./entities/Author')
 
-export default class App {
+module.exports = class App {
   static #database = new Database()
 
   createUser(name, email, password) {
@@ -35,6 +35,10 @@ export default class App {
     App.#database.addBooksToStock(bookName, quantity)
   }
 
+  get books() {
+    return App.#database.find('books')
+  }
+
   createPoster(name, desciption, height, width, price, inStock) {
     const poster = new Poster(name, desciption, height, width, price, inStock)
     App.#database.savePoster(poster)
@@ -42,6 +46,10 @@ export default class App {
 
   addPoster(posterName, quantity) {
     App.#database.addPostersToStock(posterName, quantity)
+  }
+
+  get posters() {
+    return App.#database.find('posters')
   }
 
   createOrder(items, user) {

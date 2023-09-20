@@ -1,4 +1,4 @@
-export default class Product {
+module.exports = class Product {
   constructor(name, description, price, inStock = 0) {
     this.name = name
     this.description = description

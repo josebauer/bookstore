@@ -1,6 +1,6 @@
-import Product from "./Product.js";
+const Product = require('./Product')
 
-export default class Book extends Product{
+module.exports = class Book extends Product{
   constructor(title, synopsis, genre, pages, author, description, price, inStock = 0) {
     super(`Livro: ${title}`, description, price, inStock)
     this.title = title
